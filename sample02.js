@@ -1,3 +1,3 @@
-let myFavorite = "カレー";
-myFavorite = "うどん";
-console.log(myFavorite);
+const myString = "雨";
+const myBoolean = myString === "晴れ";
+console.log(myBoolean);

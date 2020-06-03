@@ -1,4 +1,4 @@
-const myString = '1';
-console.log(myString);
-const myNumber = 2;
-console.log(myNumber);
+const myNumber = 10;
+const myString = "10";
+const myBoolean = myNumber === myString;
+console.log(myBoolean);

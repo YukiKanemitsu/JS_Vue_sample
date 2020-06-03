@@ -1,4 +1,3 @@
-let myFavorite = "カレー";
-myFavorite += "と";
-myFavorite += "ラーメン";
-console.log(myFavorite);
+const myNumber = 6 + 5;
+const myBoolean = myNumber === 11;
+console.log(myBoolean);
