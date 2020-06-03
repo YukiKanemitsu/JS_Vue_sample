@@ -1,4 +1,3 @@
-const myWeather = "晴れ";
-if (myWeather === "晴れ") {
-    console.log('天気は晴れです');    
-}
+const myFruits = ["りんご", "みかん", "スイカ", ]
+myFruits.splice(1, 0, "いちご")
+console.log(myFruits)

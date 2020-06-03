@@ -1,3 +1,3 @@
-const myString = "雨";
-const myBoolean = myString === "雨";
-console.log(myBoolean);
+for (let i = 0; i < 10; i++) {
+    console.log(i)
+}

@@ -1,6 +1,3 @@
-const myWeather = "雨";
-if (myWeather === "晴れ") {
-    console.log('天気は晴れです');    
-} else {
-    console.log('天気は晴れではないです');
-}
+const myFruits = ["りんご", "いちご", "メロン", "みかん", "スイカ", ];
+myFruits.reverse();
+console.log(myFruits);

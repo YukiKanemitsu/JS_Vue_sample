@@ -1,3 +1,5 @@
-const myString = "雨";
-const myBoolean = myString !== "晴れ";
-console.log(myBoolean);
+const myFruits = ["りんご", "みかん", "スイカ", ]
+
+for (let i = 0; i < myFruits.length; i++) {
+    console.log(myFruits[i])
+}

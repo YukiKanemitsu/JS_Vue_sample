@@ -1,4 +1,4 @@
-const myBoolean1 = true;
-console.log(myBoolean1);
-const myBoolean2 = false;
-console.log(myBoolean2);
+const myFruits = ["りんご", "みかん", "スイカ", ]
+console.log(myFruits[0])
+console.log(myFruits[1])
+console.log(myFruits[2])
