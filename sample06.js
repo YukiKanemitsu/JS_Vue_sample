@@ -1,11 +1,7 @@
-const myFruits = ["りんご", "みかん", "スイカ", ]
-let text = "私の好きな果物は"
+function addisionNumber(number1, number2) {
+    console.log(number1 + number2)
+}
 
-myFruits.forEach(function(myFruits, i) {
-    text += myFruits
-    if (i !== myFruits.length - 1) {
-        text += "と"
-    }
-})
-text += "です。"
-console.log(text)
+addisionNumber(1, 20)
+addisionNumber(12, 3)
+addisionNumber(14, 11)

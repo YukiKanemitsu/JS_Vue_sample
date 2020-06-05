@@ -1,4 +1,9 @@
-const myFruits = ["りんご", "みかん", "スイカ", ]
-console.log(myFruits[0])
-console.log(myFruits[1])
-console.log(myFruits[2])
+const myWord = 'パイナップル'
+let newWord = ''
+if (myWord.length >= 4) {
+    newWord = myWord.substring(0, 3)
+} else {
+    newWord = myWord
+}
+
+console.log(newWord)

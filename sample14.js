@@ -1,3 +1,8 @@
-const myFruits = ["りんご", "いちご", "メロン", "みかん", "スイカ", ];
-myFruits.reverse();
-console.log(myFruits);
+const answer1 = getAdditionNumber(1, 20)
+console.log(answer1)
+
+function getAdditionNumber(number1, number2) {
+    const answer = number1 + number2
+    return answer
+}
+

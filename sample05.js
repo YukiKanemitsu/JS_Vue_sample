@@ -1,10 +1,14 @@
-const myFruits = ["りんご", "みかん", "スイカ", ]
-let text = "私の好きな果物は"
-for (let i = 0; i < myFruits.length; i++) {
-    text += myFruits[i]
-    if (i !== myFruits.length - 1) {
-        text += "と"
+function checkUmbrella(weather) {
+    if (weather === '晴れ') {
+        console.log('日傘が必要')
+    } else if (weather === '雨') {
+        console.log('雨傘が必要')        
+    } else {
+        console.log('傘は不要')
     }
 }
-text += "です。"
-console.log(text)
+
+checkUmbrella('晴れ')
+checkUmbrella('雨')
+checkUmbrella('曇り')
+checkUmbrella('雪')

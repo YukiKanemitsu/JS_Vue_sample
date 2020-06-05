@@ -1,3 +1,9 @@
-const myFruits = ["りんご", "みかん", "スイカ", ]
-myFruits.push("イチゴ")
-console.log(myFruits)
+const baseNumber = 10
+function getAdditionNumber(number) {
+    const answer1 = baseNumber + number
+    return answer1
+}
+
+const answer2 = getAdditionNumber(12)
+
+console.log(answer2)
