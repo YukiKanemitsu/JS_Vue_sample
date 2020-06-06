@@ -1,9 +1,3 @@
-const myWord = 'パイナップル'
-let newWord = ''
-if (myWord.length >= 4) {
-    newWord = myWord.substring(0, 3)
-} else {
-    newWord = myWord
-}
+let myDate = new Date();
 
-console.log(newWord)
+console.log(myDate.getFullYear())

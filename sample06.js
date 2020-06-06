@@ -1,7 +1,14 @@
-function addisionNumber(number1, number2) {
-    console.log(number1 + number2)
-}
+let today = new Date()
 
-addisionNumber(1, 20)
-addisionNumber(12, 3)
-addisionNumber(14, 11)
+let dayNames = [
+    '日',
+    '月',
+    '火',
+    '水',
+    '木',
+    '金',
+    '土',
+]
+let day = today.getDay()
+
+console.log('今日は' + dayNames[day] + '曜日です')

@@ -1,14 +1,19 @@
-function checkUmbrella(weather) {
-    if (weather === '晴れ') {
-        console.log('日傘が必要')
-    } else if (weather === '雨') {
-        console.log('雨傘が必要')        
-    } else {
-        console.log('傘は不要')
-    }
-}
+console.log(
+    '今日は' 
+    + '2019' 
+    + '年'
+    + (9 + 1)
+    + '月'
+    + '22'
+    + '日です。'
+)
 
-checkUmbrella('晴れ')
-checkUmbrella('雨')
-checkUmbrella('曇り')
-checkUmbrella('雪')
+console.log(
+    '今日は' 
+    + '2019' 
+    + '年'
+    + 9 + 1
+    + '月'
+    + '22'
+    + '日です。'
+)

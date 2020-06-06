@@ -1,9 +1,5 @@
-const baseNumber = 10
-function getAdditionNumber(number) {
-    const answer1 = baseNumber + number
-    return answer1
-}
+// このコードは全て2020年2月13日10時45分00秒を指します
 
-const answer2 = getAdditionNumber(12)
-
-console.log(answer1)
+new Date(2020, 1, 13, 10, 45, 0, 0);
+new Date("2020-02-13T10:45:00");
+new Date(1581558300000);
