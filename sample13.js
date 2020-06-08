@@ -1,7 +1,24 @@
-const getAdditionNumber = function (number1, number2) {
-    const answer = number1 + number2
-    return answer
-}
+let myThings = {}
 
-const answer1 = getAdditionNumber(1, 20)
-console.log(answer1)
+Object.defineProperties(myThings, {
+    sports: {
+        enumerable: true,
+        writable: true,
+        value: 'サッカー',
+    },
+    food: {
+        enumerable: false,
+        writable: false,
+        value: 'カレーライス',
+    },
+})
+
+// enumerable属性
+console.log(Object.keys(myThings))
+
+// writable属性
+myThings.sports = 'ラグビー'
+console.log(myThings.sports)
+
+myThings.food = '寿司'
+console.log(myThings.food)

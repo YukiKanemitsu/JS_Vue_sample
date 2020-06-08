@@ -4,6 +4,8 @@ let myThings = {
     food: 'カレーライス',
 }
 
-Object.keys(myThings).forEach(function (key) {
-    console.log(key)
-})
+// ドット記法
+console.log(myThings.food)
+
+// ブラケット表記
+console.log(myThings['food'])

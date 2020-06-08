@@ -1,11 +1,12 @@
-let today = new Date()
+let myThings = {
+    sports: 'サッカー',
+    hobby: 'テーブルトークRPG',
+    food: 'カレーライス',
+}
 
-console.log(
-    '時刻は' 
-    + today.getHours()
-    + '時' 
-    + today.getMinutes() 
-    + '分'
-    + today.getMilliseconds() 
-    + 'ミリ秒です'
-)
+let div = document.querySelector('#root')
+
+div.innerHTML = 
+    '好きなスポーツ:' + myThings.sports + '<br />'
+    + '好きな遊び:' + myThings.hobby + '<br />'
+    + '好きな食べ物:' + myThings.food + '<br />'

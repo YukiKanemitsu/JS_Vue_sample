@@ -1,9 +1,7 @@
 let myThings = {
     sports: 'サッカー',
     hobby: 'テーブルトークRPG',
-    food: 'カレーライス',
+    eat: 'カレーライス',
 }
-
-myThings.tea = 'グリーンティー'
 
 console.log(myThings)

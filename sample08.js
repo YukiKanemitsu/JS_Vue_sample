@@ -1,24 +1,9 @@
-const someDay = new Date(2020, 12, 25);
+let myThings = {
+    food: '寿司',
+}
 
-const dayNames = [
-    '日',
-    '月',
-    '火',
-    '水',
-    '木',
-    '金',
-    '土',
-]
+console.log(myThings.food)
 
-const youbi = dayNames[someDay.getDay()]
+myThings.food = 'ピザ'
 
-console.log(
-    someDay.getFullYear()
-    + '年'
-    + (someDay.getMonth() + 1)
-    + '月'
-    + someDay.getDate()
-    + '日は'
-    + youbi
-    + '曜日です。'
-)
+console.log(myThings.food)

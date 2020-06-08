@@ -1,8 +1,9 @@
-const myWeather = "雨"
-if (myWeather === "雨") {
-    var text = "傘を持っていく"
-} else {
-    var text = "傘を持っていかない"
+let myThings = {
+    sports: 'サッカー',
+    hobby: 'テーブルトークRPG',
+    food: 'カレーライス',
 }
 
-console.log(text)
+Object.keys(myThings).forEach(function (key) {
+    console.log(key, 'プロパティは', myThings[key], 'です。')
+})
