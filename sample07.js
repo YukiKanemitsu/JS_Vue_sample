@@ -1,12 +1,10 @@
-let myThings = {
-    sports: 'サッカー',
-    hobby: 'テーブルトークRPG',
-    food: 'カレーライス',
-}
+let students = []
 
-let div = document.querySelector('#root')
+students.push({
+    name: 'Taro',
+    language: 84,
+    maths: 62,
+    science: 50
+})
 
-div.innerHTML = 
-    '好きなスポーツ:' + myThings.sports + '<br />'
-    + '好きな遊び:' + myThings.hobby + '<br />'
-    + '好きな食べ物:' + myThings.food + '<br />'
+console.log(students)

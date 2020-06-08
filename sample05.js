@@ -1,19 +1,12 @@
-console.log(
-    '今日は' 
-    + '2019' 
-    + '年'
-    + (9 + 1)
-    + '月'
-    + '22'
-    + '日です。'
-)
+let smoothies = [
+    'グリーン',
+    'オレンジ',
+    'ベリー',
+].map(function (name) {
+    return {
+        name: name + 'スムージー',
+        price: '360'
+    }
+})
 
-console.log(
-    '今日は' 
-    + '2019' 
-    + '年'
-    + 9 + 1
-    + '月'
-    + '22'
-    + '日です。'
-)
+console.log(smoothies)
