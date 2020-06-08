@@ -1,5 +1,5 @@
-let myDate = new Date()
+let timeoutId = setTimeout(() => {
+    console.log('5秒経過しました')
+}, 5000);
 
-console.log(myDate.getMonth() + 1)
-console.log(myDate.getDate())
-console.log(myDate.getHours())
+clearTimeout(timeoutId)

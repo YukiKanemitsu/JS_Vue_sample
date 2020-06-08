@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="timer.css">
+</head>
+<body>
+    <div id="wrapper">
+        <form action="" method="post" id="input-form">
+
+            <div class="input-text">
+                <input type="number" value="5" name="" id="time-input">
+                <label for="time-input">秒</label>
+            </div>
+
+            <div class="input-text">
+                <span>残り</span>
+                <span id="count-down">0</span>
+                <span>秒</span>
+            </div>
+
+            <div class="submit">
+                <button type="button" id="start-button">スタート</button>
+                <button type="button" id="stop-button">ストップ</button>
+            </div>
+        </form>
+    </div>
+    <script src="timer.js"></script>
+    
+</body>
+</html>

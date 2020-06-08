@@ -1,4 +1,12 @@
-// 1970年1月1日から何ミリ秒秒経過したでしょう？
-let myDate = new Date()
+let count = 1
 
-console.log('1970年1月1日から数えて' + myDate.getTime() + 'ミリ秒経過しました')
+let intervalId = setInterval(() => {
+    console.log(count + '秒経過しました')
+
+    if (count >= 5) {
+        clearInterval(intervalId)
+        console.log('停止しました')   
+    }
+
+    count++
+}, 1000);

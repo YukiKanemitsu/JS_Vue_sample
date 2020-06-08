@@ -1,3 +1,3 @@
-let myDate = new Date();
-
-console.log(myDate.getFullYear())
+setTimeout(() => {
+    console.log('5秒経過しました')
+}, 5000);
