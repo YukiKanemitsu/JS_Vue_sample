@@ -19,7 +19,7 @@ function createTodoHtmlString(todo) {
     priorityCell =
       '<td class="cell-priority"><input class="input-priority" type="number" value=' +
       todo.priority +
-      " /></td>"
+      ' /></td>'
   } else {
     todoTextCell = '<td class="cell-text">' + todo.text + "</td>"
     priorityCell = '<td class="cell-priority">' + todo.priority + "</td>"
@@ -30,15 +30,20 @@ function createTodoHtmlString(todo) {
     editType +
     '">' +
     editButtonLabel +
-    "</button></td>"
+    '</button></td>'
   htmlString += todoTextCell
-  htmlString += '<td class="cell-created-at">' + todo.createdAt + "</td>"
+  htmlString += '<td class="cell-created-at">' + todo.createdAt + '</td>'
   htmlString += priorityCell
   htmlString += '<td class="cell-done">'
   htmlString += '<button data-type="' + doneType + '">'
   htmlString += doneButtonLabel
-  htmlString += "</button></td>"
-  htmlString += "</tr>"
+  htmlString += '</button></td>'
+  htmlString += '</td>'
+  htmlString += '<td class="cell-delete">'
+  htmlString += '<button data-type="delete">'
+  htmlString += '削除'
+  htmlString += '</button></td>'
+  htmlString += '</tr>'
   return htmlString
 }
 
@@ -70,6 +75,15 @@ function editTodo(todo, type) {
   updateTodoList()
 }
 
+function deleteTodo(todo) {
+    
+    // 対象のTodoオブジェクトの配列内インデックスを調べる
+    const index = todoList.findIndex((t) => t.id === todo.id)
+
+    // 配列から削除する
+    todoList.splice(index, 1)
+}
+
 /** TodoListの描画を更新する */
 function updateTodoList() {
   let htmlStrings = ""
@@ -94,8 +108,12 @@ function updateTodoList() {
           btn.addEventListener("click", event => {
             if (type.indexOf("edit") >= 0) {
               editTodo(todo, type)
+            } else if (type.indexOf('delete') >= 0) {
+                // 配列から指定のTodoオブジェクトを削除する
+                deleteTodo(todo)
+                updateTodoState(todo, type)
             } else {
-              updateTodoState(todo, type)
+                updateTodoState(todo, type)
             }
           })
         })
