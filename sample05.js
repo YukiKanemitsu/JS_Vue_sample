@@ -1,12 +1,6 @@
-let smoothies = [
-    'グリーン',
-    'オレンジ',
-    'ベリー',
-].map(function (name) {
-    return {
-        name: name + 'スムージー',
-        price: '360'
+new Vue({
+    el: '#app',
+    data: {
+        message: 'Hello, Vue.js!'
     }
-})
-
-console.log(smoothies)
+});
