@@ -6,7 +6,12 @@
     <title>title</title>
 </head>
 <body>
-    <div id="root"></div>
+    <div id="app">
+        <p v-if="stock > 10">販売中です</p>
+        <p v-else-if="stock > 0">販売中です(残りわずか)</p>
+        <p v-else>売り切れました</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <script src="sample07.js">
     </script>
 </body>

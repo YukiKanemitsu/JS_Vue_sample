@@ -1,6 +1,8 @@
 new Vue({
     el: '#app',
     data: {
-        message: 'Hello, Vue.js!'
+        isFoo: true,
+        isBar: false,
+        bazClass: "baz"
     }
 });

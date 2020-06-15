@@ -6,6 +6,14 @@
     <title>title</title>
 </head>
 <body>
+    <div id="app">
+        <ul>
+            <li v-for="item in items" :key="item">
+                {{ item }}
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <script src="sample09.js">
     </script>
 </body>

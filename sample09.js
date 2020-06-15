@@ -1,9 +1,10 @@
-let myThings = {
-    sports: 'サッカー',
-    hobby: 'テーブルトークRPG',
-    food: 'カレーライス',
-}
-
-myThings.tea = 'グリーンティー'
-
-console.log(myThings)
+new Vue({
+    el: '#app',
+    data: {
+        items: [
+            '牛乳',
+            'みかん',
+            'パン',
+        ]
+    }
+});

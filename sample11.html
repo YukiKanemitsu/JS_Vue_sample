@@ -6,7 +6,15 @@
     <title>title</title>
 </head>
 <body>
-    <div id="title"></div>
+    <div id="app">
+        <p>
+            カウント： {{ count }}
+        </p>
+        <button @click="addCount">
+            カウント追加
+        </button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <script src="sample11.js">
     </script>
 </body>

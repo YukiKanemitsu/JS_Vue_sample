@@ -1,9 +1,6 @@
-let myThings = {
-    sports: 'サッカー',
-    hobby: 'テーブルトークRPG',
-    food: 'カレーライス',
-}
-
-myThings.tea = 'グリーンティー'
-
-console.log(Object.keys(myThings))
+new Vue({
+    el: '#app',
+    data: {
+        count: 0
+    }
+});

@@ -1,3 +1,6 @@
 new Vue({
-    // オプション
+    el: '#app',
+    data: {
+        href: 'https://jp.vuejs.org'
+    }
 });

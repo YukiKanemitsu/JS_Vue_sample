@@ -1,9 +1,11 @@
-let myThings = {
-    sports: 'サッカー',
-    hobby: 'テーブルトークRPG',
-    food: 'カレーライス',
-}
-
-Object.keys(myThings).forEach(function (key) {
-    console.log(key)
-})
+new Vue({
+    el: '#app',
+    data: {
+        count: 0
+    },
+    methods: {
+        addCount: function () {
+            this.count = this.count + 1
+        }
+    }
+});
