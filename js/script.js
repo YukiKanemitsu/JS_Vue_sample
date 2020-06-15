@@ -21,6 +21,26 @@ document.addEventListener('DOMContentLoaded', initialize.bind(this))
 /** DOM にイベントを設定する */
 function bindEvents() {
     inputForm.addEventListener("submit", event => handleSubmit(event))
+    // インボックス / 完了済の切り分けボタン
+    tabButton.forEach(tab => {
+        tab.addEventListener('click', event => handleTabClick(event))
+    })
+    // 表示順のソート
+    sortMenu.addEventListener('change', event => handleSort(event))
+}
+
+let displayTarget = 'inbox'
+
+function handleTabClick(event) {
+
+    // クリックしたターゲット(ボタン)を変数化する
+    const me = event.currentTarget
+
+    // data属性から表示ターゲットを切り替える
+    displayTarget = me.dataset.currentTarget
+
+    // HTMLを再描画
+    updateTodoList()
 }
 
 // Todoを登録する処理
@@ -61,16 +81,57 @@ function addTodo(todoObj) {
 
 // TodoListの描画を更新する
 function updateTodoList() {
-    // HTML文字列をプールする変数
     let htmlStrings = ''
 
     // HTMLを書き換える
-    todoList.forEach(todo => {
-        // 新しいHTMLを出力
-        htmlStrings += createTodoHtmlString(todo)
-        todoMain.innerHTML = htmlStrings  
-    })
+    todoList
+        .filter(todo => !todo.isDone !== (displayTarget === 'inbox')) //フィルタを追加
+        .sort(sortTodos)
+        .forEach(todo => {
+            // 新しいHTMLを出力
+            htmlStrings += createTodoHtmlString(todo)
+            todoMain.innerHTML = htmlStrings  
+        })
     todoMain.innerHTML = htmlStrings
+
+    // 書き換えたHTMLにイベントをバインドする
+    todoList
+        .filter(todo => todo.isDone !== (displayTarget === 'inbox'))
+        .forEach(todo => {
+            // trタグにidが振られているので、それを拾う
+            const todoEl = document.getElementById(todo.id)
+            // 空の場合もあるのでif文で括る
+            if (todoEl) {
+
+                // 存在したら、tr内のボタンタグを抽出する
+                todoEl.querySelectorAll('button').forEach(btn => {
+
+                    // ボタンのdata属性からボタンの種別を判別する
+                    const type = btn.dataset.type
+                    btn.addEventListener('click', event => {
+                        
+                        // data属性がindexもしくはdoneだったら完了/未完了ボタンなのでトグルする関数を実行する
+                        if (type.indexOf('inbox') >= 0 || type.indexOf('done') >= 0) {
+                            updateTodoState(todo, type)
+                        }
+                    })  
+                })
+            }
+        })
+}
+
+// フォームをクリアする
+function clearInputForm() {
+    inputForm['input-text'].value = ''
+}
+
+
+let sortIndex = 'created-desc'
+
+// ソートの実行
+function handleSort(e) {
+    sortIndex = e.currentTarget.value
+    updateTodoList()
 }
 
 // Todo1個単位のHTML文字列を生成する
@@ -154,3 +215,32 @@ function createTodoHtmlString(todo) {
     // 作ったHTMLを返す
     return htmlString
 }
+
+// todoの完了ステートの変更
+function updateTodoState(todo, type) {
+
+    // ボタンのdata属性とTodoオブジェクトのパラメータを比較する
+    todo.isDone = type === 'done'
+    updateTodoList()
+}
+
+// ソート関数
+function sortTodos(a, b) {
+    switch (sortIndex) {
+        case 'created-desc':
+            return Date.parse(b.createdAt) - Date.parse(a.createdAt)
+
+        case 'created-asc':
+            return Date.parse(a.createdAt) - Date.parse(b.createdAt)
+
+        case 'priority-desc':
+            return b.priority - a.priority
+
+        case 'priority-asc':
+            return a.priority - b.priority
+    
+        default:
+            return todoList
+    }
+}
+
