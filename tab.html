@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+
+        <div id="wrapper">
+            <h1>
+                Tab List
+            </h1>
+
+            <div id="tab">
+                <div 
+                    v-for="(tab, index) in tabs"
+                    :key="tab.id"
+                    @click="onClick(index)"
+                    class="tab-list"
+                    :class="{ '-active': index === currentTabIndex }">
+                    <button>
+                        {{ tab.name }}
+                    </button>
+                </div>
+            </div>
+
+            <div id="content">
+              {{ currentTabContent }}  
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="js/tab.js"></script>
+</body>
+</html>
