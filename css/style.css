@@ -26,6 +26,75 @@ body {
   margin: 0;
 }
 
+#header {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row-reverse;
+  background: #e6e6e6;
+}
+
+.breadcrumb-btn {
+  width: 30px;
+  height: 30px;
+  margin: 5px 20px;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20%;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+.breadcrumb-decoration {
+  content: '';
+  width: 18px;
+  height: 2px;
+  margin: 0 auto;
+  display: block;
+  background: black;
+}
+
+.breadcrumb-decoration:nth-of-type(2) {
+  margin: 4px auto;
+}
+
+.breadcrumb-menu {
+  width: 300px;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  transform: translateX(0);
+  background: #D5D5D5;
+}
+
+.breadcrumb-menu header {
+  height: 40px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.breadcrumb-menu #list {
+  margin: 0;
+  padding: 0 40px;
+  list-style: none;
+}
+
+.breadcrumb-menu #list .item {
+  margin-bottom: 15px;
+}
+
+.breadcrumb-menu #list .item a {
+  text-decoration: none;
+  color: black;
+}
+
 #modal {
   position: relative;
   width: 50%;
@@ -213,6 +282,13 @@ body {
   opacity: 0;
 }
 
+.slide-enter-active, .slide-leave-active {
+  transition: transform .15s ease-in-out;
+}
+
+.slide-enter, .slide-leave-to {
+  transform: translateX(100%);
+}
 
 @media screen and (min-width: 768px) {
   body {
