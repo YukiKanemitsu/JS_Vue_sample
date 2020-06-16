@@ -21,6 +21,7 @@
         </div>
       </div>
       <!-- タブ End -->
+
       <!-- Todo入力フォーム Begin -->
       <form id="input-form" v-on:submit.prevent="handleSubmit">
         <div class="input-text">
@@ -42,16 +43,23 @@
         </div>
       </form>
       <!-- Todo入力フォーム End -->
+
       <!-- Todo リスト Begin -->
       <table id="todo-table">
         <tbody id="todo-main">
           <tr v-for="todo in filteredTodos" :key="todo.id">
             <td class="cell-done">
               <label :class="{ '-active' : todo.done }">
-                <input type="checkbox" @click="toggleTodo(todo.id)">
+                <input v-model="todo.done" type="checkbox">
               </label>
             </td>
-            <td class="cell-text">
+            <td class="cell-text" v-if="todo.isEditing">
+              <input type="text" v-model="todo.text">
+              <button @click="saveTodo(todo.id)">
+                保存
+              </button>
+            </td>
+            <td class="cell-text" v-else @click="editTodo(todo.id)">
               {{ todo.text }}
             </td>
             <td class="cell-created-at">
@@ -61,6 +69,7 @@
         </tbody>
       </table>
       <!-- Todo リスト End -->
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <script src="js/script.js"></script>

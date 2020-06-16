@@ -11,19 +11,22 @@ function createApp() {
           id: 1, //識別用のID
           text: 'みかんを買う',
           createdAt: 1567940003455, // 登録日のUnixタイムスタンプ
-          done: false //タスクが完了したかどうか
+          done: false, //タスクが完了したかどうか
+          isEditing: false,
         },
         {
           id: 2,
           text: '郵便物を出す',
           createdAt: 1567940003455, // 登録日のUnixタイムスタンプ
-          done: false //タスクが完了したかどうか
+          done: false, //タスクが完了したかどうか
+          isEditing: false,
         },
         {
           id: 3, //識別用のID
           text: 'バターを買う',
           createdAt: 1567940003455, // 登録日のUnixタイムスタンプ
-          done: false //タスクが完了したかどうか
+          done: false, //タスクが完了したかどうか
+          isEditing: false,
         }
       ]
     },
@@ -67,7 +70,27 @@ function createApp() {
           id: this.todosLength + 1,
           text: text,
           createdAt: Date.now(),
-          done: false          
+          done: false
+        })
+      },
+      editTodo: function(id) {
+        this.todos = this.todos.map(function(todo) {
+
+          // 引数の id を持つ todo を編集中にする
+          if (todo.id === id) {
+            todo.isEditing = true
+          }
+          return todo
+        })
+      },
+      saveTodo: function(id) {
+        this.todos = this.todos.map(function(todo) {
+
+          // 引数の id を持つ todo を編集中にする
+          if (todo.id === id) {
+            todo.isEditing = false
+          }
+          return todo
         })
       }
     },
